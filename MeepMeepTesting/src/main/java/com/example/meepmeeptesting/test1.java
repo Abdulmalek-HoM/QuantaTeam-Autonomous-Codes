@@ -18,9 +18,11 @@ public class test1 {
                 .build();
 
         myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(-35, -60, Math.PI / 2))
-                .lineToY(-45)
+                .splineToLinearHeading(new Pose2d(-35, -50, 2.094395), 0)
+
                 .waitSeconds(2)
-                .splineTo(new Vector2d(-50, -35.5), 1 * Math.PI)
+                //.splineTo(new Vector2d(-10, -10), 2 * Math.PI)
+                .splineToLinearHeading(new Pose2d(-10, -10, 2 * Math.PI), 0)
 
 //                .setTangent(0.5)
 //                .splineTo(new Vector2d(40, -35.5), 0)
@@ -29,7 +31,7 @@ public class test1 {
                 .waitSeconds(2)
 //                .setTangent(Math.PI)
 //                .splineToConstantHeading(new Vector2d(-10, -10), Math.PI / 2)
-                .strafeTo(new Vector2d(-50, -10))
+//                .strafeTo(new Vector2d(-50, -10))
 //                .splineToLinearHeading(new Pose2d(20, -10, 0), 0)
                 .strafeTo(new Vector2d(20, -10))
                 .splineToLinearHeading(new Pose2d(50, -35.5, 2 * Math.PI), -0.1)

@@ -68,9 +68,11 @@ public final class Red_Far extends LinearOpMode {
         if (TuningOpModes.DRIVE_CLASS.equals(MecanumDrive.class)) {
             MecanumDrive drive = new MecanumDrive(hardwareMap, beginPose);
 
-            Open_Tilting();
-            sleep(500);
+
             GripperArm(540, 0.2);
+            sleep(500);
+            tilting.setPosition(0.7);
+
 
 
             Actions.runBlocking(
@@ -80,38 +82,31 @@ public final class Red_Far extends LinearOpMode {
                             .waitSeconds(1)
                             .build());
 
-//            ArmBase(20, 0.5);
-//            sleep(2000);
 
-            sleep(2000);
+
             gripperR.setPosition(0);
             sleep(500);
 
+            tilting.setPosition(0.5);
+            sleep(500);
+
             gripperR.setPosition(1);
-            sleep(500);
-            tilting.setPosition(1);
-            sleep(500);
-//            Close_Tilting();
             GripperArm(0, 0.2);
 
+            ArmBase(100,0.5);
 
 
             Actions.runBlocking(
                     drive.actionBuilder(new Pose2d(-35, -60, Math.PI / 2))
 
                             .splineToLinearHeading(new Pose2d(-40, -35.5, 1 * Math.PI), 0)
-//                            .waitSeconds(2)
-                            .build());
-
-
-            Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-50, -35.5, 1 * Math.PI))
                             .strafeTo(new Vector2d(-50, 10))
                             .strafeTo(new Vector2d(20, 10))
                             .splineToLinearHeading(new Pose2d(45, -34, 2 * Math.PI), 1)
                             .build());
 
-//            ArmBase(400, 0.5);
+
+
 //            sleep(1000);
             Open_Tilting();
             GripperArm(400, 0.2);
@@ -127,6 +122,13 @@ public final class Red_Far extends LinearOpMode {
 
             ArmBase(0, 0.5);
             sleep(2000);
+
+            Actions.runBlocking(
+                    drive.actionBuilder(new Pose2d(45, -34, 2 * Math.PI))
+
+                            .strafeTo(new Vector2d(55, -34))
+                            .build());
+
 
 
 
