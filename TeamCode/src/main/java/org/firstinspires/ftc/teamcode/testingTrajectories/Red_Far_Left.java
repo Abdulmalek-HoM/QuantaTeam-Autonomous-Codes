@@ -76,44 +76,35 @@ public final class Red_Far_Left extends LinearOpMode {
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .splineToLinearHeading(new Pose2d(-35, -55, 2.094395), 0)
+                            .splineToLinearHeading(new Pose2d(-35, -54, 2.094395), 0)
 
                             .waitSeconds(1)
                             .build());
 
+
 //            ArmBase(20, 0.5);
 //            sleep(2000);
 
-            sleep(2000);
+//            sleep(2000);
+            tilting.setPosition(1);
+            sleep(1000);
             gripperR.setPosition(0);
             sleep(500);
 
             gripperR.setPosition(1);
             sleep(500);
-            tilting.setPosition(1);
-            sleep(500);
-//            Close_Tilting();
-            GripperArm(0, 0.2);
-
 
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-35, -60, Math.PI / 2))
-
-                            .splineToLinearHeading(new Pose2d(-40, -35.5, 1 * Math.PI), 0)
+                    drive.actionBuilder(new Pose2d(-35, -54, 2.094395))
+                            .splineTo(new Vector2d(-10, -10), 2 * Math.PI)
+                            .strafeTo(new Vector2d(20, -10))
+                            .splineTo(new Vector2d(45, -30), 2 * Math.PI)
+//                            .splineToLinearHeading(new Pose2d(-40, -35.5, 1 * Math.PI), 0)
 //                            .waitSeconds(2)
                             .build());
 
 
-            Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-50, -35.5, 1 * Math.PI))
-                            .strafeTo(new Vector2d(-50, 10))
-                            .strafeTo(new Vector2d(20, 10))
-                            .splineToLinearHeading(new Pose2d(45, -30, 2 * Math.PI), 1)
-                            .build());
-
-//            ArmBase(400, 0.5);
-//            sleep(1000);
             Open_Tilting();
             GripperArm(400, 0.2);
             sleep(2000);
@@ -160,7 +151,7 @@ public final class Red_Far_Left extends LinearOpMode {
     }
 
     private void Open_Tilting() {
-        tilting.setPosition(0.7);
+        tilting.setPosition(0.9);
         sleep(200);
     }
 
