@@ -71,14 +71,14 @@ public final class Red_Far extends LinearOpMode {
 
             GripperArm(540, 0.2);
             sleep(500);
-            tilting.setPosition(0.7);
+            tilting.setPosition(0.8);
 
 
 
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .lineToY(-45)
+                            .lineToY(-44)
                             .waitSeconds(1)
                             .build());
 
@@ -87,22 +87,22 @@ public final class Red_Far extends LinearOpMode {
             gripperR.setPosition(0);
             sleep(500);
 
-            tilting.setPosition(0.5);
-            sleep(500);
-
+            GripperArm(10, 0.2);
+            ArmBase(230,0.5);
             gripperR.setPosition(1);
-            GripperArm(0, 0.2);
 
-            ArmBase(100,0.5);
+            sleep(1000);
 
+            tilting.setPosition(0.7);
 
             Actions.runBlocking(
                     drive.actionBuilder(new Pose2d(-35, -60, Math.PI / 2))
 
                             .splineToLinearHeading(new Pose2d(-40, -35.5, 1 * Math.PI), 0)
-                            .strafeTo(new Vector2d(-50, 10))
+                            .waitSeconds(1)
+                            .strafeTo(new Vector2d(-45, 10))
                             .strafeTo(new Vector2d(20, 10))
-                            .splineToLinearHeading(new Pose2d(45, -30, 2 * Math.PI), 1)
+                            .splineToLinearHeading(new Pose2d(48, -25, 2 * Math.PI), 1)
                             .build());
 
 
@@ -117,7 +117,7 @@ public final class Red_Far extends LinearOpMode {
             sleep(500);
             gripperL.setPosition(1);
 
-            GripperArm(0, 0.2);
+            GripperArm(10, 0.2);
             sleep(500);
 
             ArmBase(0, 0.5);

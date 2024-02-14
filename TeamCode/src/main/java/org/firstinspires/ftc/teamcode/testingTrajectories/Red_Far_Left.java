@@ -85,7 +85,6 @@ public final class Red_Far_Left extends LinearOpMode {
 //            ArmBase(20, 0.5);
 //            sleep(2000);
 
-//            sleep(2000);
             tilting.setPosition(1);
             sleep(1000);
             gripperR.setPosition(0);
