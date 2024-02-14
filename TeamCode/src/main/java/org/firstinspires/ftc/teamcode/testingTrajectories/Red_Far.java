@@ -102,7 +102,7 @@ public final class Red_Far extends LinearOpMode {
                             .splineToLinearHeading(new Pose2d(-40, -35.5, 1 * Math.PI), 0)
                             .strafeTo(new Vector2d(-50, 10))
                             .strafeTo(new Vector2d(20, 10))
-                            .splineToLinearHeading(new Pose2d(45, -34, 2 * Math.PI), 1)
+                            .splineToLinearHeading(new Pose2d(45, -30, 2 * Math.PI), 1)
                             .build());
 
 
@@ -124,9 +124,9 @@ public final class Red_Far extends LinearOpMode {
             sleep(2000);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(45, -34, 2 * Math.PI))
+                    drive.actionBuilder(new Pose2d(45, -30, 2 * Math.PI))
 
-                            .strafeTo(new Vector2d(55, -34))
+                            .strafeTo(new Vector2d(55, -30))
                             .build());
 
 
