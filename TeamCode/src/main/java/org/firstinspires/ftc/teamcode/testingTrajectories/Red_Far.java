@@ -17,7 +17,7 @@ import org.firstinspires.ftc.teamcode.tuning.TuningOpModes;
 
 @Autonomous
 
-public final class TestingScoutField extends LinearOpMode {
+public final class Red_Far extends LinearOpMode {
     // slides
     DcMotor slideL;
     DcMotor slideR;
