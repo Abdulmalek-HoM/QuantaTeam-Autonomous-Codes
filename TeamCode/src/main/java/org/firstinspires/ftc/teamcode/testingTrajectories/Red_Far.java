@@ -121,10 +121,9 @@ public final class Red_Far extends LinearOpMode {
             sleep(500);
 
             ArmBase(0, 0.5);
-            sleep(2000);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(45, -30, 2 * Math.PI))
+                    drive.actionBuilder(new Pose2d(48, -25, 2 * Math.PI))
 
                             .strafeTo(new Vector2d(55, -30))
                             .build());

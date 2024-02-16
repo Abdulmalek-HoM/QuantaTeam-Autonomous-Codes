@@ -17,7 +17,7 @@ import org.firstinspires.ftc.teamcode.tuning.TuningOpModes;
 
 @Autonomous
 
-public final class Red_Far_Left extends LinearOpMode {
+public final class Red_Far_Right extends LinearOpMode {
     // slides
     DcMotor slideL;
     DcMotor slideR;
@@ -76,7 +76,7 @@ public final class Red_Far_Left extends LinearOpMode {
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .splineToLinearHeading(new Pose2d(-35, -54, 2.094395), 0)
+                            .splineToLinearHeading(new Pose2d(-35, -54, 1.047198), 0)
 
                             .waitSeconds(1)
                             .build());
@@ -97,7 +97,7 @@ public final class Red_Far_Left extends LinearOpMode {
             tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-35, -54, 2.094395))
+                    drive.actionBuilder(new Pose2d(-35, -54, 1.047198))
                             .turnTo(Math.PI / 2)
                             .lineToYSplineHeading(15,2 * Math.PI)
 

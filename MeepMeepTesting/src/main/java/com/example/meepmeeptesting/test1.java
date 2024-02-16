@@ -18,31 +18,13 @@ public class test1 {
                 .build();
 
         myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(-35, -60, Math.PI / 2))
-                .splineToLinearHeading(new Pose2d(-35, -50, 2.094395), 0)
+                .splineToLinearHeading(new Pose2d(-35, -54, 1.047198), 0)
 
-                .waitSeconds(2)
-                //.splineTo(new Vector2d(-10, -10), 2 * Math.PI)
-                .splineToLinearHeading(new Pose2d(-10, -10, 2 * Math.PI), 0)
+                .turnTo(Math.PI / 2)
+                .lineToYSplineHeading(15,2 * Math.PI)
 
-//                .setTangent(0.5)
-//                .splineTo(new Vector2d(40, -35.5), 0)
-
-//                .splineToLinearHeading(new Pose2d(50, -35.5, 1 * Math.PI), 0)
-                .waitSeconds(2)
-//                .setTangent(Math.PI)
-//                .splineToConstantHeading(new Vector2d(-10, -10), Math.PI / 2)
-//                .strafeTo(new Vector2d(-50, -10))
-//                .splineToLinearHeading(new Pose2d(20, -10, 0), 0)
-                .strafeTo(new Vector2d(20, -10))
-                .splineToLinearHeading(new Pose2d(50, -35.5, 2 * Math.PI), -0.1)
-
-//                .splineToLinearHeading(new Pose2d(50, -35.5, 2 * Math.PI), 3)
-//                .strafeTo(new Vector2d(40, -35.5))
-//                                .turn(Math.toRadians(180))
-//                            .lineToY(-61.37)
-//                            .setTangent(1)
-
-
+                .strafeTo(new Vector2d(20, 10))
+                .splineTo(new Vector2d(45, -15), 2 * Math.PI)
                 .build());
 
         meepMeep.setBackground(MeepMeep.Background.FIELD_CENTERSTAGE_JUICE_DARK)
