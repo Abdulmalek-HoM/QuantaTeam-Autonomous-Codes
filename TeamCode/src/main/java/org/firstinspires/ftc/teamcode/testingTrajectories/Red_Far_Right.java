@@ -97,12 +97,12 @@ public final class Red_Far_Right extends LinearOpMode {
             tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-35, -54, 1.047198))
+                    drive.actionBuilder(new Pose2d(-35, -54, 1.22173))
                             .turnTo(Math.PI / 2)
-                            .lineToYSplineHeading(15,2 * Math.PI)
+                            .splineTo(new Vector2d(-45, -10), 2 * Math.PI)
 
                             .strafeTo(new Vector2d(20, 10))
-                            .splineTo(new Vector2d(45, -15), 2 * Math.PI)
+                            .splineTo(new Vector2d(45, -30), 2 * Math.PI)
 //                            .splineToLinearHeading(new Pose2d(-40, -35.5, 1 * Math.PI), 0)
 //                            .waitSeconds(2)
                             .build());
