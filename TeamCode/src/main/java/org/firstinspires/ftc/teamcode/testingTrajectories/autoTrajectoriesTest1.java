@@ -22,7 +22,7 @@ import org.firstinspires.ftc.teamcode.tuning.TuningOpModes;
 .strafeTo(new Vector2d(49.87, -60))
 
  */
-@Autonomous
+
 public class autoTrajectoriesTest1 extends LinearOpMode {
 
     Servo gripperL;

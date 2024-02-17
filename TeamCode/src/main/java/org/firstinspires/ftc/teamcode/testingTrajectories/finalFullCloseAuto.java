@@ -31,7 +31,6 @@ start pose: new Pose2d(12, -61, Math.PI / 2)
                 .lineToX(60)
 
  */
-@Autonomous
 public class finalFullCloseAuto extends LinearOpMode {
 
     blobDetectionTest detector = new blobDetectionTest(telemetry);

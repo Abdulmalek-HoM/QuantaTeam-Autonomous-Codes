@@ -1,14 +1,11 @@
 package com.example.meepmeeptesting;
 
-
 import com.acmerobotics.roadrunner.Pose2d;
 import com.acmerobotics.roadrunner.Vector2d;
 import com.noahbres.meepmeep.MeepMeep;
 import com.noahbres.meepmeep.roadrunner.DefaultBotBuilder;
 import com.noahbres.meepmeep.roadrunner.entity.RoadRunnerBotEntity;
-
-public class test1 {
-
+public class Red_Close_Center {
     public static void main(String[] args) {
         MeepMeep meepMeep = new MeepMeep(600);
 
@@ -17,33 +14,46 @@ public class test1 {
                 .setConstraints(60, 60, Math.toRadians(180), Math.toRadians(180), 15)
                 .build();
 
-        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(-35, 60, 3*Math.PI / 2))
-
-
-                .lineToY(48)
-                .turnTo(4.276057)
-
+        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(11, -60, Math.PI / 2))
+                .lineToY(-46)
                 .waitSeconds(1)
 
-
-                .turnTo(1* Math.PI / 2)
-                .lineToY(5)
-                .turnTo(2* Math.PI )
+                //put pixel on the ground
                 .lineToX(40)
-                .turnTo(3* Math.PI/2 )
-                .lineToY(36)
+
+                .turnTo(Math.PI/2 )
+
+                .lineToY(-35)
+
 
                 .turnTo(2* Math.PI)
 
-                        .waitSeconds(1)
-                .lineToX(53)
+
+                .lineToX(48)
+
+
+
+
+
+                // Put pixel on back drop
+                //
+                //
+                .lineToX(50)
 
                 .build());
+
+
+
+
 
         meepMeep.setBackground(MeepMeep.Background.FIELD_CENTERSTAGE_JUICE_DARK)
                 .setDarkMode(true)
                 .setBackgroundAlpha(0.95f)
                 .addEntity(myBot)
                 .start();
+
+
     }
+
+
 }

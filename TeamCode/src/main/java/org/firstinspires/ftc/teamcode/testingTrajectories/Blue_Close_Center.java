@@ -17,7 +17,7 @@ import org.firstinspires.ftc.teamcode.tuning.TuningOpModes;
 
 @Autonomous
 
-public final class Red_Far extends LinearOpMode {
+public final class Blue_Close_Center  extends LinearOpMode {
     // slides
     DcMotor slideL;
     DcMotor slideR;
@@ -64,7 +64,7 @@ public final class Red_Far extends LinearOpMode {
         gripperL.setPosition(1);
 
         waitForStart();
-        Pose2d beginPose = new Pose2d(-35, -60, Math.PI / 2);
+        Pose2d beginPose = new Pose2d(11, 60, 3*Math.PI / 2);
         if (TuningOpModes.DRIVE_CLASS.equals(MecanumDrive.class)) {
             MecanumDrive drive = new MecanumDrive(hardwareMap, beginPose);
 
@@ -78,8 +78,9 @@ public final class Red_Far extends LinearOpMode {
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .lineToY(-44)
+                            .lineToY(46)
                             .waitSeconds(1)
+
                             .build());
 
 
@@ -96,34 +97,25 @@ public final class Red_Far extends LinearOpMode {
             tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-35, -44, Math.PI / 2))
+                    drive.actionBuilder(new Pose2d(11, 45, 4.276057))
 
-                            .turnTo(1*Math.PI)
-                            .lineToX(-53)
+                            .turnTo(2 * Math.PI)
+                            .lineToX(40)
 
-                            .turnTo(Math.PI/2 )
+                            .turnTo(3*Math.PI/2 )
 
-                            .lineToY(0)
+                            .lineToY(32)
 
-                            .turnTo(2* Math.PI )
-
-                            .lineToX(51)
-
-                            .turnTo(3* Math.PI/2)
-
-                            .lineToY(-32)
 
                             .turnTo(2* Math.PI)
-
 
                             .build());
 
 
 
-
 //            sleep(1000);
             Open_Tilting();
-            GripperArm(450, 0.2);
+            GripperArm(400, 0.2);
             sleep(2000);
 
 
@@ -137,11 +129,12 @@ public final class Red_Far extends LinearOpMode {
             ArmBase(0, 0.5);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(48, -32, 2 * Math.PI))
-
-                            .lineToX(53)
-
+                    drive.actionBuilder(new Pose2d(42, 26, 2 * Math.PI))
+                            .lineToX(50)
+                            .turnTo(3 * Math.PI/2)
+                            .lineToY(60)
                             .build());
+
 
 
 

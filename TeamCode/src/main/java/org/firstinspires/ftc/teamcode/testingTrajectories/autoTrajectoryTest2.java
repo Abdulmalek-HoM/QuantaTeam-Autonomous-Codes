@@ -23,7 +23,6 @@ trajectory strategy:
         .setTangent(2 * Math.PI)
         .lineToX(60)
  */
-@Autonomous
 public class autoTrajectoryTest2 extends LinearOpMode {
 
     DcMotor gripperArm;

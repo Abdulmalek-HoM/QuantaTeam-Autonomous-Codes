@@ -76,8 +76,8 @@ public final class Red_Far_Left extends LinearOpMode {
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .splineToLinearHeading(new Pose2d(-35, -54, 2.094395), 0)
-
+                            .lineToY(-46)
+                            .turnTo(2.094395)
                             .waitSeconds(1)
                             .build());
 
@@ -97,19 +97,20 @@ public final class Red_Far_Left extends LinearOpMode {
             tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-35, -54, 2.094395))
-                            .turnTo(Math.PI / 2)
-                            .lineToYSplineHeading(15,2 * Math.PI)
+                    drive.actionBuilder(new Pose2d(-35, -46, 2.094395))
+                            .turnTo(1* Math.PI / 2)
+                            .lineToY(0)
+                            .turnTo(2* Math.PI )
+                            .lineToX(51)
+                            .turnTo(3* Math.PI/2 )
+                            .lineToY(-24)
 
-                            .strafeTo(new Vector2d(20, 10))
-                            .splineTo(new Vector2d(45, -15), 2 * Math.PI)
-//                            .splineToLinearHeading(new Pose2d(-40, -35.5, 1 * Math.PI), 0)
-//                            .waitSeconds(2)
+                            .turnTo(2* Math.PI)
                             .build());
 
 
             Open_Tilting();
-            GripperArm(400, 0.2);
+            GripperArm(450, 0.2);
             sleep(2000);
 
 
@@ -124,9 +125,9 @@ public final class Red_Far_Left extends LinearOpMode {
 
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(48, -15, 2 * Math.PI))
+                    drive.actionBuilder(new Pose2d(48, -24, 2 * Math.PI))
+                            .lineToX(53)
 
-                            .strafeTo(new Vector2d(55, -15))
                             .build());
 
 
