@@ -74,12 +74,11 @@ public final class Blue_Close_Left extends LinearOpMode {
             tilting.setPosition(0.8);
 
 
-
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .lineToY(43)
-                            .turnTo(-1.22173)
+                            .lineToY(47)
+                            .turnTo(-1.047198)
                             .waitSeconds(1)
 
                             .build());
@@ -98,14 +97,16 @@ public final class Blue_Close_Left extends LinearOpMode {
             tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(11, 43, -1.22173))
+                    drive.actionBuilder(new Pose2d(11, 47, -1.047198))
+
+                            .lineToY(55)
 
                             .turnTo(2 * Math.PI)
-                            .lineToX(40)
+                            .lineToX(35)
 
                             .turnTo(3*Math.PI/2 )
 
-                            .lineToY(40)
+                            .lineToY(41)
 
 
                             .turnTo(2* Math.PI)
@@ -115,9 +116,14 @@ public final class Blue_Close_Left extends LinearOpMode {
 
 //            sleep(1000);
             Open_Tilting();
-            GripperArm(400, 0.2);
+            GripperArm(430, 0.2);
             sleep(2000);
 
+            Actions.runBlocking(
+                    drive.actionBuilder(new Pose2d(35, 39, 2* Math.PI))
+                            .lineToX(43)
+
+                            .build());
 
             gripperL.setPosition(0);
             sleep(500);
@@ -129,10 +135,10 @@ public final class Blue_Close_Left extends LinearOpMode {
             ArmBase(0, 0.5);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(42, 26, 2 * Math.PI))
+                    drive.actionBuilder(new Pose2d(43, 39, 2 * Math.PI))
                             .lineToX(50)
                             .turnTo(3 * Math.PI/2)
-                            .lineToY(60)
+                            .lineToY(57)
                             .build());
 
 
@@ -167,7 +173,7 @@ public final class Blue_Close_Left extends LinearOpMode {
     }
 
     private void Open_Tilting() {
-        tilting.setPosition(0.7);
+        tilting.setPosition(0.65);
         sleep(200);
     }
 

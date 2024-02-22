@@ -70,7 +70,7 @@ public final class Red_Far extends LinearOpMode {
 
 
             GripperArm(540, 0.2);
-            sleep(500);
+            sleep(1000);
             tilting.setPosition(0.8);
 
 
@@ -78,7 +78,7 @@ public final class Red_Far extends LinearOpMode {
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .lineToY(-44)
+                            .lineToY(-48)
                             .waitSeconds(1)
                             .build());
 
@@ -96,22 +96,23 @@ public final class Red_Far extends LinearOpMode {
             tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-35, -44, Math.PI / 2))
+                    drive.actionBuilder(new Pose2d(-35, -48, Math.PI / 2))
+                            .lineToY(-55)
 
                             .turnTo(1*Math.PI)
                             .lineToX(-53)
 
                             .turnTo(Math.PI/2 )
 
-                            .lineToY(0)
+                            .lineToY(-5)
 
                             .turnTo(2* Math.PI )
 
-                            .lineToX(51)
+                            .lineToX(38)
 
                             .turnTo(3* Math.PI/2)
 
-                            .lineToY(-32)
+                            .lineToY(-29)
 
                             .turnTo(2* Math.PI)
 
@@ -123,9 +124,15 @@ public final class Red_Far extends LinearOpMode {
 
 //            sleep(1000);
             Open_Tilting();
-            GripperArm(450, 0.2);
+            GripperArm(430, 0.2);
             sleep(2000);
 
+            Actions.runBlocking(
+                    drive.actionBuilder(new Pose2d(38, -32, 2* Math.PI))
+
+                            .lineToX(48)
+
+                            .build());
 
             gripperL.setPosition(0);
             sleep(500);
@@ -174,7 +181,7 @@ public final class Red_Far extends LinearOpMode {
     }
 
     private void Open_Tilting() {
-        tilting.setPosition(0.7);
+        tilting.setPosition(0.65);
         sleep(200);
     }
 

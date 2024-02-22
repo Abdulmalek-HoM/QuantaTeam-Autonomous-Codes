@@ -16,7 +16,7 @@ public class blobDetectionTest extends OpenCvPipeline {
 
     public Telemetry telemetry;
 
-    List<Integer> TP_COLOR = Arrays.asList(255, 0, 0); //(red, green, blue)
+    List<Integer> TP_COLOR = Arrays.asList(0, 0, 255); //(red, green, blue)
 
 
     public static int tp_zone = 2;

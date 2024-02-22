@@ -70,7 +70,7 @@ public final class Red_Close_Left extends LinearOpMode {
 
 
             GripperArm(540, 0.2);
-            sleep(500);
+            sleep(1000);
             tilting.setPosition(0.8);
 
 
@@ -78,7 +78,7 @@ public final class Red_Close_Left extends LinearOpMode {
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .lineToY(-46)
+                            .lineToY(-50)
                             .turnTo(2.129302)
                             .waitSeconds(1)
                             .build());
@@ -97,14 +97,16 @@ public final class Red_Close_Left extends LinearOpMode {
             tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(11, -46, 2.129302))
+                    drive.actionBuilder(new Pose2d(11, -50, 2.129302))
+                            .turnTo(1*Math.PI/2)
+                            .lineToY(-51)
 
                             .turnTo(2 * Math.PI)
-                            .lineToX(42)
+                            .lineToX(38)
 
                             .turnTo(Math.PI/2 )
 
-                            .lineToY(-24)
+                            .lineToY(-23)
 
 
                             .turnTo(2* Math.PI)
@@ -116,9 +118,14 @@ public final class Red_Close_Left extends LinearOpMode {
 
 //            sleep(1000);
             Open_Tilting();
-            GripperArm(400, 0.2);
+            GripperArm(450, 0.2);
             sleep(2000);
 
+            Actions.runBlocking(
+                    drive.actionBuilder(new Pose2d(38, -24, 2* Math.PI))
+                            .lineToX(42)
+
+                            .build());
 
             gripperL.setPosition(0);
             sleep(500);
@@ -130,13 +137,11 @@ public final class Red_Close_Left extends LinearOpMode {
             ArmBase(0, 0.5);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(40, -24, 2 * Math.PI))
+                    drive.actionBuilder(new Pose2d(42, -24, 2 * Math.PI))
                             .lineToX(50)
                             .turnTo(3 * Math.PI/2)
                             .lineToY(-55)
                             .build());
-
-
 
 
         }

@@ -76,7 +76,7 @@ public final class Blue_Far_Center extends LinearOpMode {
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .lineToY(45)
+                            .lineToY(46)
                             .waitSeconds(1)
                             .build());
 
@@ -96,7 +96,9 @@ public final class Blue_Far_Center extends LinearOpMode {
             tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-35, 45, 3*Math.PI / 2))
+                    drive.actionBuilder(new Pose2d(-35, 46, 3*Math.PI / 2))
+
+
                             .turnTo(1*Math.PI)
                             .lineToX(-53)
 
@@ -106,19 +108,25 @@ public final class Blue_Far_Center extends LinearOpMode {
 
                             .turnTo(2* Math.PI )
 
-                            .lineToX(51)
+                            .lineToX(38)
 
                             .turnTo(3* Math.PI/2)
 
-                            .lineToY(33)
+                            .lineToY(32)
 
                             .turnTo(2* Math.PI)
                             .build());
 
 
             Open_Tilting();
-            GripperArm(450, 0.2);
+            GripperArm(430, 0.2);
             sleep(2000);
+            Actions.runBlocking(
+                    drive.actionBuilder(new Pose2d(38, 32, 2* Math.PI))
+
+                            .lineToX(48)
+
+                            .build());
 
 
             gripperL.setPosition(0);

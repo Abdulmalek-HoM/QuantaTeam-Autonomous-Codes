@@ -76,8 +76,8 @@ public final class Blue_Far_Left extends LinearOpMode {
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .lineToY(45)
-                            .turnTo(-1.134464)
+                            .lineToY(46)
+                            .turnTo(-1.047198)
                             .waitSeconds(1)
                             .build());
 
@@ -97,22 +97,29 @@ public final class Blue_Far_Left extends LinearOpMode {
             tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-35, 45, -1.134464))
+                    drive.actionBuilder(new Pose2d(-35, 46, -1.047198))
+                            .lineToY(55)
+
                             .turnTo(1* Math.PI / 2)
                             .lineToY(3)
                             .turnTo(2* Math.PI )
-                            .lineToX(53)
+                            .lineToX(38)
                             .turnTo(3* Math.PI/2 )
-                            .lineToY(40)
+                            .lineToY(39)
 
                             .turnTo(2* Math.PI)
                             .build());
 
 
             Open_Tilting();
-            GripperArm(450, 0.2);
+            GripperArm(430, 0.2);
             sleep(2000);
+            Actions.runBlocking(
+                    drive.actionBuilder(new Pose2d(35, 40, 2* Math.PI))
 
+                            .lineToX(48)
+
+                            .build());
 
             gripperL.setPosition(0);
             sleep(500);
@@ -160,7 +167,7 @@ public final class Blue_Far_Left extends LinearOpMode {
     }
 
     private void Open_Tilting() {
-        tilting.setPosition(0.75);
+        tilting.setPosition(0.65);
         sleep(200);
     }
 

@@ -78,8 +78,8 @@ public final class Blue_Close_Right extends LinearOpMode {
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .lineToY(43)
-                            .turnTo(4.363323)
+                            .lineToY(47)
+                            .turnTo(-1.972222)
                             .waitSeconds(1)
 
                             .build());
@@ -98,10 +98,11 @@ public final class Blue_Close_Right extends LinearOpMode {
             tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(11, 43, 4.363323))
+                    drive.actionBuilder(new Pose2d(11, 47, 3*Math.PI/2))
+                            .lineToY(55)
 
                             .turnTo(2 * Math.PI)
-                            .lineToX(42)
+                            .lineToX(35)
 
                             .turnTo(3*Math.PI/2 )
 
@@ -116,8 +117,14 @@ public final class Blue_Close_Right extends LinearOpMode {
 
 //            sleep(1000);
             Open_Tilting();
-            GripperArm(400, 0.2);
+            GripperArm(430, 0.2);
             sleep(2000);
+
+            Actions.runBlocking(
+                    drive.actionBuilder(new Pose2d(35, 26, 2* Math.PI))
+                            .lineToX(43)
+
+                            .build());
 
 
             gripperL.setPosition(0);
@@ -133,7 +140,7 @@ public final class Blue_Close_Right extends LinearOpMode {
                     drive.actionBuilder(new Pose2d(42, 26, 2 * Math.PI))
                             .lineToX(50)
                             .turnTo(3 * Math.PI/2)
-                            .lineToY(60)
+                            .lineToY(57)
                             .build());
 
 

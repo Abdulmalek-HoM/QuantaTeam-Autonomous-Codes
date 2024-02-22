@@ -76,8 +76,8 @@ public final class Red_Far_Left extends LinearOpMode {
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .lineToY(-46)
-                            .turnTo(2.094395)
+                            .lineToY(-50)
+                            .turnTo(2.146755)
                             .waitSeconds(1)
                             .build());
 
@@ -97,21 +97,28 @@ public final class Red_Far_Left extends LinearOpMode {
             tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-35, -46, 2.094395))
+                    drive.actionBuilder(new Pose2d(-35, -50, 2.146755))
+
                             .turnTo(1* Math.PI / 2)
-                            .lineToY(0)
+                            .lineToY(-5)
                             .turnTo(2* Math.PI )
-                            .lineToX(51)
+                            .lineToX(38)
                             .turnTo(3* Math.PI/2 )
-                            .lineToY(-24)
+                            .lineToY(-22)
 
                             .turnTo(2* Math.PI)
                             .build());
 
 
             Open_Tilting();
-            GripperArm(450, 0.2);
+            GripperArm(430, 0.2);
             sleep(2000);
+            Actions.runBlocking(
+                    drive.actionBuilder(new Pose2d(38, -22, 2* Math.PI))
+
+                            .lineToX(48)
+
+                            .build());
 
 
             gripperL.setPosition(0);
@@ -125,7 +132,7 @@ public final class Red_Far_Left extends LinearOpMode {
 
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(48, -24, 2 * Math.PI))
+                    drive.actionBuilder(new Pose2d(48, -22, 2 * Math.PI))
                             .lineToX(53)
 
                             .build());
@@ -160,7 +167,7 @@ public final class Red_Far_Left extends LinearOpMode {
     }
 
     private void Open_Tilting() {
-        tilting.setPosition(0.9);
+        tilting.setPosition(0.65);
         sleep(200);
     }
 
